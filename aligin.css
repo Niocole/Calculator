@@ -1,0 +1,10 @@
+/* #display{
+	display: flex;
+	height: 55px;
+} */
+#first-row, #second-row, #third-row, #fourth-row, #fifth-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}

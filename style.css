@@ -1,0 +1,196 @@
+html {
+	height: 100%;
+	width: 100%;
+	background-color: black;
+}
+
+#calculator {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+
+#answer {
+	color: white;
+	font-family: sans-serif;
+	text-align: right;
+	font-size: 70px;
+	margin-top: 0;
+	margin-right: 150px;
+	margin-bottom: 0;
+}
+
+button {
+	font-size: 30px;
+	color: white;
+	border: none;
+}
+
+#clear-all {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: gray;
+}
+
+#postitive-negative-change {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: gray;
+}
+
+#percent {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: gray;
+}
+
+#divide {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: orange;
+}
+
+#mutiplies {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: orange;
+}
+
+#minus {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: orange;
+}
+
+#plus {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: orange;
+}
+
+#equals {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: orange;
+}
+
+#seven {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#eight {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#nine {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#four {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#five {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#six {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#one {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#two {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#three {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
+
+#zero {
+	height: 100px;
+	width: 200px;
+	border-radius: 50px;
+	background-color: #363030;
+}
+
+#dots {
+	display: block;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 1px;
+	background-color: #363030;
+}
