@@ -1,3 +1,5 @@
 .vscode
 .idea
 script.js
+node_modules
+.gitpod.yml
