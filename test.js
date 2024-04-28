@@ -1,4 +1,4 @@
-import { Decimal } from 'decimal.js';
+// import { Decimal } from 'decimal.js';
 // Define element
 const answer = document.getElementById("answer");
 let firstInput = "";
@@ -33,34 +33,31 @@ function handleNumberInput(input) {
 
 
 // Perform calculation
-function calculate() {
-  const num1 = new Decimal(firstInput);
-  const num2 = new Decimal(secondInput);
-  let result;
+equal.addEventListener("click", () => {
+  const num1 = parseFloat(firstInput);
+  const num2 = parseFloat(secondInput);
+  let result = 0;
 
   switch (currentOperator) {
     case "+":
-      result = num1.plus(num2);
+      result = num1 + num2;
       break;
     case "-":
-      result = num1.minus(num2);
+      result = num1 - num2;
       break;
     case "*":
-      result = num1.times(num2);
+      result = num1 * num2;
       break;
     case "/":
-      result = num1.div(num2);
+      result = num1 / num2;
       break;
-    default:
-      result = new Decimal(0); // Default case to handle unexpected operators
   }
-  result = result.toPrecision(10);
 
   answer.innerHTML = result.toString();
   firstInput = result.toString();
   secondInput = "";
   currentOperator = "";
-}
+});
 
 // Event listener for operators
 operators.forEach(operator => {
