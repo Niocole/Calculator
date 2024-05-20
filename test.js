@@ -15,10 +15,12 @@
  function handleNumberInput(input) {
    if (input === "." && firstInput.includes(".") && currentOperator === "") {
      // Prevent adding more than one decimal point to firstInput
-     return;
+     console.log("handled double dots for firstInput");
+      return;
    } else if (input === "." && secondInput.includes(".") && currentOperator !== "") {
      // Prevent adding more than one decimal point to secondInput
-     return;
+     console.log("handled double dots for secondInput");
+      return;
    }
 
    if (currentOperator === "") {
@@ -34,34 +36,46 @@
  // Perform calculation
  equal.addEventListener("click", () => {
    const num1 = parseFloat(firstInput);
+    console.log("parseFloat firstInput");
    const num2 = parseFloat(secondInput);
+    console.log("parse floated secondInput");
    let result = 0;
+    console.log("result setted to 0");
 
    switch (currentOperator) {
      case "+":
        result = num1 + num2;
+       console.log(num1 + " + " + num2 + " = " + result);
        break;
      case "-":
        result = num1 - num2;
+       console.log(num1 + " - " + num2 + " = " + result);
        break;
      case "*":
        result = num1 * num2;
+       console.log(num1 + " * " + num2 + " = " + result);
        break;
      case "/":
        result = num1 / num2;
+       console.log(num1 + " / " + num2 + " = " + result);
        break;
    }
 
    answer.innerHTML = result.toString();
+   console.log("answer is a string");
    firstInput = result.toString();
+   console.log("first input is a string");
    secondInput = "";
+   console.log("second input is setted to nothing");
    currentOperator = "";
+   console.log("current operator is setted to nothing")
  });
 
  // Event listener for numbers
  numbers.forEach(number => {
    number.addEventListener("click", (e) => {
      handleNumberInput(e.target.getAttribute("value"));
+     console.log("a numkey is clicked");
    });
  });
 
@@ -82,27 +96,32 @@
  	firstInput = "";
  	secondInput = "";
  	currentOperator = "";
- 	answer.innerHTML = "0";
+   answer.innerHTML = "0";
+   console.log("clear is clicked");
  });
 
  //Event listener for changing the answer between positive and negative
- PosNegChange.addEventListener("click", () => {
- 	let result = Number(answer.innerHTML);
- 	result *=-1;
- 	answer.innerHTML = result.toString();
- })
+PosNegChange.addEventListener("click", () => {
+  let result = Number(answer.innerHTML);
+  result *= -1;
+  answer.innerHTML = result.toString();
+  console.log("Positive Negative Change is clicked")
+});
 
  //Event listener for changing the answer to percentage
  percentage.addEventListener("click", () => {
  	let result = Number(answer.innerHTML);
  	result /= 100;
- 	answer.innerHTML = result.toString();
+   answer.innerHTML = result.toString();
+   console.log("the answer is now a percentage")
  })
 
  //Event listener for adding demincial
  demincial.addEventListener("click", () => {
- 	handleNumberInput(".");
+   handleNumberInput(".");
+   console.log("a demincial dot is added")
  });
 
  // Event listener for equals button
- document.getElementById("equals").addEventListener("click", calculate)
+// document.getElementById("equals").addEventListener("click", calculate)
+//  console.log("answer is calculated")
