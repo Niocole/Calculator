@@ -1,3 +1,4 @@
+import { Decimal } from '../node_modules/decimal.js/decimal.js';
 
 // Define element
  const answer = document.getElementById("answer");
