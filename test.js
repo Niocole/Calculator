@@ -1,3 +1,4 @@
+
 // Define element
  const answer = document.getElementById("answer");
  let firstInput = "";
@@ -9,7 +10,8 @@
  const PosNegChange = document.getElementById("postitive-negative-change");
  const percentage = document.getElementById("percent")
  const equal = document.getElementById("equals");
- const demincial = document.getElementById("dots");
+const demincial = document.getElementById("dots");
+let caseNum;
 
  // Function to handle number input with decimal
  function handleNumberInput(input) {
@@ -34,33 +36,67 @@
 
 
  // Perform calculation
- equal.addEventListener("click", () => {
-   const num1 = parseFloat(firstInput);
-    console.log("parseFloat firstInput");
-   const num2 = parseFloat(secondInput);
+equal.addEventListener("click", () => {
+  if (firstInput.isDecimal() === ture || secondInput.isDecimal() === true) {
+    num1 = new Decimal(firstInput);
+    num2 = new Decimal(secondInput);
+    caseNum = 0;
+  } else {
+    const num1 = parseFloat(firstInput);
+      console.log("parseFloat firstInput");
+     const num2 = parseFloat(secondInput);
     console.log("parse floated secondInput");
+    caseNum = 1;
+  }
+  
    let result = 0;
     console.log("result setted to 0");
-
-   switch (currentOperator) {
-     case "+":
-       result = num1 + num2;
-       console.log(num1 + " + " + num2 + " = " + result);
-       break;
-     case "-":
-       result = num1 - num2;
-       console.log(num1 + " - " + num2 + " = " + result);
-       break;
-     case "*":
-       result = num1 * num2;
-       console.log(num1 + " * " + num2 + " = " + result);
-       break;
-     case "/":
-       result = num1 / num2;
-       console.log(num1 + " / " + num2 + " = " + result);
-       break;
+  if (caseNum = 0) {
+    switch (currentOperator) {
+      case "+":
+        result = new Decimal(num1).plus(num2);
+        console.log(num1 + " + " + num2 + " = " + result);
+        break;
+      case "-":
+        result = new Decimal(num1).minus(num2);
+        console.log(num1 + " - " + num2 + " = " + result);
+        break;
+      case "*":
+        result = new Decimal(num1).times(num2);
+        console.log(num1 + " * " + num2 + " = " + result);
+        break;
+      case "/":
+        result = num1.div(num2);
+        console.log(num1 + " / " + num2 + " = " + result);
+        break;
+    }
+  } else if (caseNum = 1) {
+    switch (currentOperator) {
+      case "+":
+        result = num1 + num2;
+        console.log(num1 + " + " + num2 + " = " + result);
+        break;
+      case "-":
+        result = num1 - num2;
+        console.log(num1 + " - " + num2 + " = " + result);
+        break;
+      case "*":
+        result = num1 * num2;
+        console.log(num1 + " * " + num2 + " = " + result);
+        break;
+      case "/":
+        result = num1 / num2;
+        console.log(num1 + " / " + num2 + " = " + result);
+        break;
+    }
+  }
+  if (result.isNaN() === true) {
+    alert("The result is NaN please try a new calculation");
+    firstInput = "";
+ 	  secondInput = "";
+ 	  currentOperator = "";
+    answer.innerHTML = "0";  
    }
-
    answer.innerHTML = result.toString();
    console.log("answer is a string");
    firstInput = result.toString();
